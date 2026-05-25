@@ -1,0 +1,297 @@
+﻿<Window x:Class="NivelUIWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FarmacieApp"
+        Height="700"
+        Width="1000"
+        MinWidth="800"
+        MinHeight="550">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#F5F5F5">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Background="#DDDDDD">
+
+            <Button x:Name="btnAdmin"
+                    Content="Administreaza medicamente"
+                    Click="btnAdmin_Click"/>
+
+            <Button x:Name="btnCautaMeniu"
+                    Content="Cauta medicament"
+                    Click="btnCautaMeniu_Click"/>
+
+            <Button x:Name="btnModificaMeniu"
+                    Content="Modifica medicament"
+                    Click="btnModificaMeniu_Click"/>
+
+            <Button x:Name="btnProducatoriMeniu"
+                    Content="Administreaza producatori"
+                    Click="btnProducatoriMeniu_Click"/>
+
+        </StackPanel>
+
+        <ScrollViewer Grid.Column="1"
+                      VerticalScrollBarVisibility="Auto">
+
+            <StackPanel Margin="20">
+
+                <!-- PANEL ADMINISTRARE MEDICAMENTE -->
+                <StackPanel x:Name="panelAdministrare">
+
+                    <TextBlock Text="Adaugare medicament"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Margin="0,0,0,20"/>
+
+                    <Label x:Name="lblDenumire" Content="Denumire"/>
+                    <TextBox x:Name="txtDenumire"/>
+
+                    <Label x:Name="lblPret" Content="Pret"/>
+                    <TextBox x:Name="txtPret"/>
+
+                    <Label x:Name="lblCantitate" Content="Cantitate"/>
+                    <TextBox x:Name="txtCantitate"/>
+
+                    <Label x:Name="lblProducator" Content="Producator"/>
+                    <TextBox x:Name="txtProducator"/>
+
+                    <Label Content="Data expirare"/>
+                    <DatePicker x:Name="dtpDataExpirare"
+                                SelectedDateFormat="Short"
+                                Margin="0,0,0,10"/>
+
+                    <TextBlock x:Name="txtMesajEroare"
+                               Text=""
+                               Foreground="Red"
+                               FontWeight="Bold"
+                               Margin="0,5,0,10"/>
+
+                    <GroupBox Header="Tip medicament" Margin="0,10">
+                        <StackPanel>
+                            <RadioButton x:Name="rbAntibiotic"
+                                         Content="Antibiotic"
+                                         IsChecked="True"
+                                         Margin="5"/>
+
+                            <RadioButton x:Name="rbAnalgezic"
+                                         Content="Analgezic"
+                                         Margin="5"/>
+
+                            <RadioButton x:Name="rbVitamine"
+                                         Content="Vitamine"
+                                         Margin="5"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <GroupBox Header="Forma administrare" Margin="0,10">
+                        <StackPanel>
+                            <RadioButton x:Name="rbComprimate"
+                                         Content="Comprimate"
+                                         IsChecked="True"
+                                         Margin="5"/>
+
+                            <RadioButton x:Name="rbSirop"
+                                         Content="Sirop"
+                                         Margin="5"/>
+
+                            <RadioButton x:Name="rbInjectabil"
+                                         Content="Injectabil"
+                                         Margin="5"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <GroupBox Header="Caracteristici - CheckBox" Margin="0,10">
+                        <StackPanel>
+                            <CheckBox x:Name="ckbReteta"
+                                      Content="Necesita reteta"
+                                      Margin="5"/>
+
+                            <CheckBox x:Name="ckbCompensat"
+                                      Content="Compensat"
+                                      Margin="5"/>
+
+                            <CheckBox x:Name="ckbStocDisponibil"
+                                      Content="Disponibil in stoc"
+                                      Margin="5"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <Button x:Name="btnAdauga"
+                            Content="Adauga medicament"
+                            Click="btnAdauga_Click"/>
+
+                    <Button x:Name="btnReset"
+                            Content="Reset"
+                            Click="btnReset_Click"/>
+
+                    <Button x:Name="btnAfiseaza"
+                            Content="Afiseaza medicamente"
+                            Click="btnAfiseaza_Click"/>
+
+                </StackPanel>
+
+                <!-- PANEL CAUTARE -->
+                <StackPanel x:Name="panelCautare"
+                            Visibility="Collapsed">
+
+                    <TextBlock Text="Cautare medicament"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Margin="0,0,0,20"/>
+
+                    <Label Content="Introdu denumirea medicamentului"/>
+                    <TextBox x:Name="txtCautare"/>
+
+                    <Button x:Name="btnCauta"
+                            Content="Cauta"
+                            Width="150"
+                            HorizontalAlignment="Left"
+                            Click="btnCauta_Click"/>
+
+                    <Label x:Name="lblMesaj"
+                           Content=""
+                           Foreground="Red"
+                           Margin="0,10,0,0"/>
+
+                </StackPanel>
+
+                <!-- PANEL MODIFICARE MEDICAMENTE -->
+                <StackPanel x:Name="panelModificare"
+                            Visibility="Collapsed">
+
+                    <TextBlock Text="Modificare medicament"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Margin="0,0,0,20"/>
+
+                    <Label Content="Alege medicamentul"/>
+                    <ComboBox x:Name="cmbMedicamente"
+                              Height="30"
+                              DisplayMemberPath="Denumire"
+                              SelectionChanged="cmbMedicamente_SelectionChanged"
+                              Margin="0,0,0,10"/>
+
+                    <Label Content="Caracteristici - ListBox"/>
+                    <ListBox x:Name="lstCaracteristici"
+                             SelectionMode="Multiple"
+                             Height="100"
+                             Margin="0,0,0,10"/>
+
+                    <Label Content="Data expirare"/>
+                    <DatePicker x:Name="dtpDataExpirareModificare"
+                                SelectedDateFormat="Short"
+                                Margin="0,0,0,10"/>
+
+                    <Button x:Name="btnActualizeaza"
+                            Content="Actualizeaza medicament"
+                            Click="btnActualizeaza_Click"/>
+
+                    <Label x:Name="lblMesajModificare"
+                           Content=""
+                           Foreground="Red"
+                           Margin="0,10,0,0"/>
+
+                </StackPanel>
+
+                <!-- PANEL PRODUCATORI - LAB 10 -->
+                <StackPanel x:Name="panelProducatori"
+                            Visibility="Collapsed">
+
+                    <TextBlock Text="Administrare producatori"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Margin="0,0,0,20"/>
+
+                    <Label Content="Id producator"/>
+                    <TextBox x:Name="txtIdProducator"/>
+
+                    <Label Content="Nume producator"/>
+
+                    <!-- Binding 1: TextBox -->
+                    <TextBox x:Name="txtNumeProducator"
+                             Text="{Binding NumeProducatorBinding, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <!-- Binding 2: Label -->
+                    <Label Content="{Binding NumeProducatorBinding, StringFormat=Preview nume: {0}}"
+                           Foreground="DarkBlue"/>
+
+                    <Label Content="Tara"/>
+                    <TextBox x:Name="txtTaraProducator"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="btnAdaugaProducator"
+                                Content="Adauga"
+                                Width="120"
+                                Click="btnAdaugaProducator_Click"/>
+
+                        <Button x:Name="btnAfiseazaProducatori"
+                                Content="Afiseaza"
+                                Width="120"
+                                Click="btnAfiseazaProducatori_Click"/>
+
+                        <Button x:Name="btnModificaProducator"
+                                Content="Modifica"
+                                Width="120"
+                                Click="btnModificaProducator_Click"/>
+
+                        <Button x:Name="btnStergeProducator"
+                                Content="Sterge"
+                                Width="120"
+                                Click="btnStergeProducator_Click"/>
+                    </StackPanel>
+
+                    <Label Content="Alege producator pentru modificare/stergere"/>
+                    <ComboBox x:Name="cmbProducatori"
+                              Height="30"
+                              DisplayMemberPath="Nume"
+                              SelectionChanged="cmbProducatori_SelectionChanged"
+                              Margin="0,0,0,10"/>
+
+                    <Label x:Name="lblMesajProducator"
+                           Content=""
+                           Foreground="Red"
+                           Margin="0,10,0,0"/>
+
+                    <DataGrid x:Name="dgProducatori"
+                              ItemsSource="{Binding Producatori}"
+                              Margin="0,20,0,0"
+                              Height="250"
+                              AutoGenerateColumns="True"
+                              IsReadOnly="True"/>
+
+                </StackPanel>
+
+                <!-- TABEL MEDICAMENTE -->
+                <DataGrid x:Name="dgMedicamente"
+                          Margin="0,20,0,0"
+                          Height="320"
+                          AutoGenerateColumns="True"
+                          IsReadOnly="True"/>
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+    </Grid>
+</Window>

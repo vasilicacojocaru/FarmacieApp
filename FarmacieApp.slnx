@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="FarmacieApp/FarmacieApp.csproj" />
+  <Project Path="LibrarieModele/LibrarieModele.csproj" />
+  <Project Path="NivelStocareDate/NivelStocareDate.csproj" />
+  <Project Path="NivelUIWPF/NivelUIWPF.csproj" Id="28a9f6ba-3857-4602-9928-4088a13c1158" />
+</Solution>
