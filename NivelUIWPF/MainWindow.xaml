@@ -224,20 +224,31 @@
                                Margin="0,0,0,20"/>
 
                     <Label Content="Id producator"/>
-                    <TextBox x:Name="txtIdProducator"/>
+                    <TextBox x:Name="txtIdProducator"
+         Text="{Binding ProducatorVM.IdProducator, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+
+                    <TextBlock Foreground="Red"
+           FontSize="11"
+           Text="{Binding ElementName=txtIdProducator, Path=(Validation.Errors)/ErrorContent}"/>
 
                     <Label Content="Nume producator"/>
-
-                    <!-- Binding 1: TextBox -->
                     <TextBox x:Name="txtNumeProducator"
-                             Text="{Binding NumeProducatorBinding, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         Text="{Binding ProducatorVM.Nume, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
 
-                    <!-- Binding 2: Label -->
-                    <Label Content="{Binding NumeProducatorBinding, StringFormat=Preview nume: {0}}"
-                           Foreground="DarkBlue"/>
+                    <TextBlock Foreground="Red"
+           FontSize="11"
+           Text="{Binding ElementName=txtNumeProducator, Path=(Validation.Errors)/ErrorContent}"/>
+
+                    <Label Content="{Binding ProducatorVM.Nume, StringFormat=Preview nume: {0}}"
+       Foreground="DarkBlue"/>
 
                     <Label Content="Tara"/>
-                    <TextBox x:Name="txtTaraProducator"/>
+                    <TextBox x:Name="txtTaraProducator"
+         Text="{Binding ProducatorVM.Tara, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+
+                    <TextBlock Foreground="Red"
+           FontSize="11"
+           Text="{Binding ElementName=txtTaraProducator, Path=(Validation.Errors)/ErrorContent}"/>
 
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="btnAdaugaProducator"

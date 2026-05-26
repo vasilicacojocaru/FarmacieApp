@@ -1,0 +1,16 @@
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\bin\Debug\net10.0\NivelStocareDate.deps.json
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\bin\Debug\net10.0\NivelStocareDate.dll
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\bin\Debug\net10.0\NivelStocareDate.pdb
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\bin\Debug\net10.0\LibrarieModele.dll
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\bin\Debug\net10.0\LibrarieModele.pdb
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\obj\Debug\net10.0\NivelStocareDate.csproj.AssemblyReference.cache
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\obj\Debug\net10.0\NivelStocareDate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\obj\Debug\net10.0\NivelStocareDate.AssemblyInfoInputs.cache
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\obj\Debug\net10.0\NivelStocareDate.AssemblyInfo.cs
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\obj\Debug\net10.0\NivelStocareDate.csproj.CoreCompileInputs.cache
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\obj\Debug\net10.0\NivelStocareDate.sourcelink.json
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\obj\Debug\net10.0\NivelSto.ECC26E05.Up2Date
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\obj\Debug\net10.0\NivelStocareDate.dll
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\obj\Debug\net10.0\refint\NivelStocareDate.dll
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\obj\Debug\net10.0\NivelStocareDate.pdb
+C:\Users\Vasilica\source\repos\FarmacieApp\NivelStocareDate\obj\Debug\net10.0\ref\NivelStocareDate.dll

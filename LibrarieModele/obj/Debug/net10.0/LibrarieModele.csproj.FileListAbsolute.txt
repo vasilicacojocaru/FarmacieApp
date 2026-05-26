@@ -1,0 +1,12 @@
+C:\Users\Vasilica\source\repos\FarmacieApp\LibrarieModele\bin\Debug\net10.0\LibrarieModele.deps.json
+C:\Users\Vasilica\source\repos\FarmacieApp\LibrarieModele\bin\Debug\net10.0\LibrarieModele.dll
+C:\Users\Vasilica\source\repos\FarmacieApp\LibrarieModele\bin\Debug\net10.0\LibrarieModele.pdb
+C:\Users\Vasilica\source\repos\FarmacieApp\LibrarieModele\obj\Debug\net10.0\LibrarieModele.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vasilica\source\repos\FarmacieApp\LibrarieModele\obj\Debug\net10.0\LibrarieModele.AssemblyInfoInputs.cache
+C:\Users\Vasilica\source\repos\FarmacieApp\LibrarieModele\obj\Debug\net10.0\LibrarieModele.AssemblyInfo.cs
+C:\Users\Vasilica\source\repos\FarmacieApp\LibrarieModele\obj\Debug\net10.0\LibrarieModele.csproj.CoreCompileInputs.cache
+C:\Users\Vasilica\source\repos\FarmacieApp\LibrarieModele\obj\Debug\net10.0\LibrarieModele.sourcelink.json
+C:\Users\Vasilica\source\repos\FarmacieApp\LibrarieModele\obj\Debug\net10.0\LibrarieModele.dll
+C:\Users\Vasilica\source\repos\FarmacieApp\LibrarieModele\obj\Debug\net10.0\refint\LibrarieModele.dll
+C:\Users\Vasilica\source\repos\FarmacieApp\LibrarieModele\obj\Debug\net10.0\LibrarieModele.pdb
+C:\Users\Vasilica\source\repos\FarmacieApp\LibrarieModele\obj\Debug\net10.0\ref\LibrarieModele.dll

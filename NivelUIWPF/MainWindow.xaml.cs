@@ -22,6 +22,8 @@ namespace NivelUIWPF
 
         public ObservableCollection<Producator> Producatori { get; set; } =
             new ObservableCollection<Producator>();
+        public ProducatorViewModel ProducatorVM { get; set; } =
+            new ProducatorViewModel();
 
         private string numeProducatorBinding = "";
 
@@ -426,15 +428,16 @@ namespace NivelUIWPF
 
         private void btnAdaugaProducator_Click(object sender, RoutedEventArgs e)
         {
-            if (!ValideazaProducator())
+            if (!ProducatorVM.EsteValid)
+            {
+                lblMesajProducator.Content = "Date invalide. Verifica erorile afisate.";
                 return;
-
-            int id = int.Parse(txtIdProducator.Text);
+            }
 
             Producator producator = new Producator(
-                id,
-                txtNumeProducator.Text,
-                txtTaraProducator.Text
+                int.Parse(ProducatorVM.IdProducator),
+                ProducatorVM.Nume,
+                ProducatorVM.Tara
             );
 
             Producatori.Add(producator);
@@ -459,12 +462,15 @@ namespace NivelUIWPF
                 return;
             }
 
-            if (!ValideazaProducator())
+            if (!ProducatorVM.EsteValid)
+            {
+                lblMesajProducator.Content = "Date invalide. Verifica erorile afisate.";
                 return;
+            }
 
-            producator.IdProducator = int.Parse(txtIdProducator.Text);
-            producator.Nume = txtNumeProducator.Text;
-            producator.Tara = txtTaraProducator.Text;
+            producator.IdProducator = int.Parse(ProducatorVM.IdProducator);
+            producator.Nume = ProducatorVM.Nume;
+            producator.Tara = ProducatorVM.Tara;
 
             dgProducatori.Items.Refresh();
             cmbProducatori.Items.Refresh();
@@ -478,13 +484,17 @@ namespace NivelUIWPF
 
             if (producator == null)
             {
-                lblMesajProducator.Content = "Selecteaza un producator.";
+                lblMesajProducator.Content = "Selecteaza un producator pentru stergere.";
                 return;
             }
 
             Producatori.Remove(producator);
 
-            CurataCampuriProducator();
+            dgProducatori.Items.Refresh();
+            cmbProducatori.Items.Refresh();
+
+            ProducatorVM.Reset();
+            cmbProducatori.SelectedIndex = -1;
 
             lblMesajProducator.Content = "Producator sters cu succes.";
         }
@@ -496,9 +506,9 @@ namespace NivelUIWPF
             if (producator == null)
                 return;
 
-            txtIdProducator.Text = producator.IdProducator.ToString();
-            NumeProducatorBinding = producator.Nume;
-            txtTaraProducator.Text = producator.Tara;
+            ProducatorVM.IdProducator = producator.IdProducator.ToString();
+            ProducatorVM.Nume = producator.Nume;
+            ProducatorVM.Tara = producator.Tara;
         }
 
         private bool ValideazaProducator()
@@ -534,9 +544,7 @@ namespace NivelUIWPF
 
         private void CurataCampuriProducator()
         {
-            txtIdProducator.Clear();
-            NumeProducatorBinding = "";
-            txtTaraProducator.Clear();
+            ProducatorVM.Reset();
             cmbProducatori.SelectedItem = null;
         }
     }
